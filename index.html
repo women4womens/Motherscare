@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mother Care Women's Hospital</title>
     
@@ -73,7 +73,7 @@
             transform: translateY(0);
         }
     </style>
-<script src="/_aistudio-iframe.js?v=2f1c016a"></script></head>
+</head>
 <body class="flex flex-col min-h-screen">
 
     <!-- Navigation Bar -->
@@ -1156,41 +1156,5 @@
             observer.observe(el);
         });
     </script>
-    <!-- Temporary Copy Code Button for iPad User -->
-    <button id="copy-code-btn" class="fixed bottom-6 right-6 bg-navy text-white px-6 py-3 rounded-full shadow-2xl z-[9999] font-medium flex items-center gap-2 hover:bg-navy/90 active:scale-95 transition-all border-2 border-white/20">
-        <i data-lucide="copy" class="w-5 h-5"></i>
-        <span id="copy-text">Copy HTML Code</span>
-    </button>
-
-    <script>
-        document.getElementById('copy-code-btn').addEventListener('click', async () => {
-            try {
-                // Fetch the original HTML file
-                const response = await fetch(window.location.href);
-                let html = await response.text();
-                
-                // Clean up Vite's injected dev script if it exists
-                html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>\s*/g, '');
-                
-                await navigator.clipboard.writeText(html);
-                
-                // Visual feedback
-                const btn = document.getElementById('copy-code-btn');
-                const textSpan = document.getElementById('copy-text');
-                const icon = btn.querySelector('i');
-                
-                textSpan.innerText = 'Copied Successfully!';
-                btn.classList.replace('bg-navy', 'bg-teal');
-                
-                setTimeout(() => {
-                    textSpan.innerText = 'Copy HTML Code';
-                    btn.classList.replace('bg-teal', 'bg-navy');
-                }, 3000);
-            } catch (err) {
-                alert('Failed to copy: ' + err);
-            }
-        });
-    </script>
 </body>
 </html>
-
