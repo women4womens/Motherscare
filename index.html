@@ -516,7 +516,7 @@
                         SQA Social Welfare Trust is a charitable organization founded with a long-term vision of creating meaningful and lasting social impact across India.
                     </p>
 
-                    <div class="my-8 flex flex-col sm:flex-row gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm items-center sm:items-start text-center sm:text-left">
+                    <div id="founder" class="my-8 flex flex-col sm:flex-row gap-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm items-center sm:items-start text-center sm:text-left">
                         <div class="w-24 h-24 rounded-full bg-lightgray flex items-center justify-center shrink-0 border border-teal/20">
                             <i data-lucide="user" class="w-10 h-10 text-teal"></i>
                         </div>
@@ -1011,12 +1011,12 @@
                 <div>
                     <h4 class="font-medium text-navy mb-6 text-sm">Organization</h4>
                     <ul class="space-y-4 text-sm text-muted font-light">
-                        <li><a href="#" class="hover:text-teal transition-colors">Home</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">About Trust</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Founder</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Vision & Mission</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Hospital Project</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Medical Services</a></li>
+                        <li><a href="#home" class="hover:text-teal transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-teal transition-colors">About Trust</a></li>
+                        <li><a href="#founder" class="hover:text-teal transition-colors">Founder</a></li>
+                        <li><a href="#mission" class="hover:text-teal transition-colors">Vision & Mission</a></li>
+                        <li><a href="#project" class="hover:text-teal transition-colors">Hospital Project</a></li>
+                        <li><a href="#services" class="hover:text-teal transition-colors">Medical Services</a></li>
                     </ul>
                 </div>
 
@@ -1026,9 +1026,9 @@
                     <ul class="space-y-4 text-sm text-muted font-light">
                         <li><a href="#donate" class="hover:text-teal transition-colors">Donate</a></li>
                         <li><a href="#volunteer" class="hover:text-teal transition-colors">Become Volunteer</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">News & Events</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Transparency Reports</a></li>
-                        <li><a href="#" class="hover:text-teal transition-colors">Annual Reports</a></li>
+                        <li><a href="#message" class="hover:text-teal transition-colors">News & Events</a></li>
+                        <li><a href="#about" class="hover:text-teal transition-colors">Transparency Reports</a></li>
+                        <li><a href="#about" class="hover:text-teal transition-colors">Annual Reports</a></li>
                     </ul>
                 </div>
 
@@ -1110,8 +1110,16 @@
 
                 if (hash === '#volunteer' || hash === '#join-our-mission') {
                     volunteerView.classList.remove('hidden');
-                } else if (hash === '#about' || hash === '#about-trust') {
+                } else if (hash === '#about' || hash === '#about-trust' || hash === '#founder') {
                     aboutView.classList.remove('hidden');
+                    if (hash === '#founder') {
+                        setTimeout(() => {
+                            const el = document.getElementById('founder');
+                            if (el) {
+                                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 50);
+                    }
                 } else if (hash === '#mission' || hash === '#our-mission') {
                     missionView.classList.remove('hidden');
                 } else if (hash === '#project' || hash === '#hospital-project') {
