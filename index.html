@@ -839,23 +839,23 @@
                                 <form id="volunteer-form" class="space-y-6">
                                     <div>
                                         <label class="block text-sm font-medium text-navy mb-2" for="v-name">Full Name</label>
-                                        <input type="text" id="v-name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="Enter your name">
+                                        <input type="text" id="v-name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="Enter your name">
                                     </div>
                                     
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-sm font-medium text-navy mb-2" for="v-email">Email Address</label>
-                                            <input type="email" id="v-email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="you@example.com">
+                                            <input type="email" id="v-email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="you@example.com">
                                         </div>
                                         <div>
                                             <label class="block text-sm font-medium text-navy mb-2" for="v-phone">Phone Number</label>
-                                            <input type="tel" id="v-phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="+91 98765 43210">
+                                            <input type="tel" id="v-phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="+91 98765 43210">
                                         </div>
                                     </div>
 
                                     <div>
                                         <label class="block text-sm font-medium text-navy mb-2" for="v-role">Your Professional Role / Profile</label>
-                                        <select id="v-role" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm bg-white">
+                                        <select id="v-role" name="role" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm bg-white">
                                             <option value="">Select your role</option>
                                             <option value="doctor">Medical Doctor</option>
                                             <option value="nurse">Nurse / Healthcare Staff</option>
@@ -894,11 +894,11 @@
 
                                     <div>
                                         <label class="block text-sm font-medium text-navy mb-2" for="v-message">Tell us a bit about yourself &amp; your ideas</label>
-                                        <textarea id="v-message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="How would you like to build the future with SQA Trust?"></textarea>
+                                        <textarea id="v-message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="How would you like to build the future with SQA Trust?"></textarea>
                                     </div>
 
-                                    <button type="submit" class="w-full py-4 bg-teal text-white rounded-full font-medium hover:bg-opacity-90 transition-all hover-lift flex items-center justify-center gap-2">
-                                        Submit Application
+                                    <button type="submit" id="v-submit-btn" class="w-full py-4 bg-teal text-white rounded-full font-medium hover:bg-opacity-90 transition-all hover-lift flex items-center justify-center gap-2">
+                                        <span>Submit Application</span>
                                         <i data-lucide="send" class="w-4 h-4"></i>
                                     </button>
                                 </form>
@@ -909,9 +909,9 @@
                                 <div class="w-16 h-16 bg-teal/10 text-teal rounded-full flex items-center justify-center mx-auto">
                                     <i data-lucide="party-popper" class="w-8 h-8"></i>
                                 </div>
-                                <h4 class="text-xl font-medium text-navy">Welcome to SQA Trust!</h4>
+                                <h4 class="text-xl font-medium text-navy">Thank you, we will contact you soon</h4>
                                 <p class="text-sm text-muted font-light max-w-sm mx-auto">
-                                    Thank you for taking the first step. Our team will review your details and reach out to you within 48 hours to discuss how we can walk this path together.
+                                    Your application has been received successfully.
                                 </p>
                                 <button id="v-reset-btn" class="text-sm text-teal font-medium hover:underline mt-4">
                                     Submit another form
@@ -969,22 +969,27 @@
                     </div>
                     <div>
                         <h2 class="text-2xl font-medium text-navy mb-6">Send us a Message</h2>
-                        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you for contacting us. We will get back to you soon.');">
+                        <form id="contact-form" class="space-y-4">
                             <div>
                                 <label class="block text-sm font-medium text-navy mb-1" for="c-name">Full Name</label>
-                                <input type="text" id="c-name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="Your Name">
+                                <input type="text" id="c-name" name="name" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-navy mb-1" for="c-phone">Phone Number</label>
+                                <input type="tel" id="c-phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="Your Phone Number">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-navy mb-1" for="c-email">Email Address</label>
-                                <input type="email" id="c-email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="you@example.com">
+                                <input type="email" id="c-email" name="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm" placeholder="you@example.com">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-navy mb-1" for="c-message">Message</label>
-                                <textarea id="c-message" required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm resize-none" placeholder="How can we help you?"></textarea>
+                                <textarea id="c-message" name="message" required rows="4" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-teal text-sm resize-none" placeholder="How can we help you?"></textarea>
                             </div>
-                            <button type="submit" class="w-full bg-navy text-white py-3 rounded-xl font-medium hover:bg-opacity-90 transition-all text-sm">
-                                Send Message
+                            <button type="submit" id="c-submit-btn" class="w-full bg-navy text-white py-3 rounded-xl font-medium hover:bg-opacity-90 transition-all text-sm flex items-center justify-center gap-2">
+                                <span>Send Message</span>
                             </button>
+                            <div id="c-status-message" class="hidden text-sm font-medium text-teal text-center mt-2"></div>
                         </form>
                     </div>
                 </div>
@@ -1159,17 +1164,34 @@
         if (volunteerForm) {
             volunteerForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Grab form data to mimic a real submission
-                const name = document.getElementById('v-name').value;
-                const email = document.getElementById('v-email').value;
-                const phone = document.getElementById('v-phone').value;
-                const role = document.getElementById('v-role').value;
                 
-                console.log("Volunteer application submitted successfully:", { name, email, phone, role });
-
-                // Transition states
-                formContainer.classList.add('hidden');
-                successState.classList.remove('hidden');
+                const submitBtn = document.getElementById('v-submit-btn');
+                const originalBtnContent = submitBtn.innerHTML;
+                
+                // Set loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> <span>Sending...</span>';
+                lucide.createIcons();
+                
+                const formData = new FormData(volunteerForm);
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwgQdES7FOkOTcTGxuHGQD4CkQUNAFt7JCL-vJ614LlcZ8DgczAOW_-_cEtkjV2DBNSWA/exec';
+                
+                fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+                    .then(response => {
+                        // Transition states
+                        formContainer.classList.add('hidden');
+                        successState.classList.remove('hidden');
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert("There was an error submitting your application. Please try again.");
+                    })
+                    .finally(() => {
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnContent;
+                        lucide.createIcons();
+                    });
             });
         }
 
@@ -1200,6 +1222,47 @@
         document.querySelectorAll('.fade-in-up').forEach((el) => {
             observer.observe(el);
         });
+
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('c-submit-btn');
+                const statusMessage = document.getElementById('c-status-message');
+                const originalBtnContent = submitBtn.innerHTML;
+                
+                // Set loading state
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Sending...';
+                lucide.createIcons();
+                statusMessage.classList.add('hidden');
+                
+                const formData = new FormData(contactForm);
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwgQdES7FOkOTcTGxuHGQD4CkQUNAFt7JCL-vJ614LlcZ8DgczAOW_-_cEtkjV2DBNSWA/exec';
+                
+                fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData })
+                    .then(response => {
+                        // Show success message
+                        statusMessage.textContent = 'Thank you, we will contact you soon';
+                        statusMessage.classList.remove('hidden');
+                        statusMessage.classList.replace('text-red-500', 'text-teal');
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        // Show error message
+                        statusMessage.textContent = 'Error sending message. Please try again.';
+                        statusMessage.classList.remove('hidden');
+                        statusMessage.classList.replace('text-teal', 'text-red-500');
+                    })
+                    .finally(() => {
+                        // Reset button
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnContent;
+                    });
+            });
+        }
     </script>
 </body>
 </html>
